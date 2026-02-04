@@ -18,10 +18,12 @@ escrevendoletra();
 
 // MENU MOBILE
 const ativaMenu = document.querySelector('.fa-bars');
-const menu = document.querySelector('.menu-mobile');
+const navMenu = document.querySelector('header .navegacao-primaria');
 
-ativaMenu.addEventListener('click', () => {
-  ativaMenu.classList.toggle('fa-x');
-  ativaMenu.classList.toggle('fa-bars');
-  menu.classList.toggle('ativo');
-});
+if (ativaMenu && navMenu) {
+  ativaMenu.addEventListener('click', () => {
+    ativaMenu.classList.toggle('fa-x');
+    ativaMenu.classList.toggle('fa-bars');
+    navMenu.classList.toggle('ativado');
+  });
+}
