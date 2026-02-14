@@ -1,13 +1,10 @@
-function DescrevendoLetra(){
 
-}
 
 
 function escrevendoletra() {
   function ativaLetra(elemento) {
     const arrTexto = elemento.innerHTML.split('');
     elemento.innerHTML = '';
-
     arrTexto.forEach((letra, i) => {
       setTimeout(() => {
         elemento.innerHTML += letra;
@@ -19,7 +16,7 @@ function escrevendoletra() {
   if (titulo) ativaLetra(titulo);
 }
 
-escrevendoletra();
+escrevendoletra()
 
 function menuMobol(){
 
@@ -36,10 +33,21 @@ if (ativaMenu && navMenu) {
 }
 }
 
+menuMobol(); // 👈 ativando menu mobile
+
+function sobreMim(){
+
+
+// slid show
 const divExperiencia = document.querySelectorAll('.experience_content div')
 const liExperiencia = document.querySelectorAll('.experience_content ul li')
 const divEducation = document.querySelectorAll('.education_content div')
 const liEducation = document.querySelectorAll('.education_content ul li')
+
+divExperiencia[0].classList.add('ativo')
+divEducation[0].classList.add('ativo')
+liExperiencia[0].classList.add('ativo')
+liEducation[0].classList.add('ativo')
 
 function slideShow(index){
   divExperiencia.forEach((div)=>{
@@ -50,9 +58,32 @@ function slideShow(index){
   })
   divExperiencia[index].classList.add('ativo');
   liExperiencia[index].classList.add('ativo');
-
-
-
-
-
 }
+
+function slideShow2(index){
+  divEducation.forEach((div)=>{
+    div.classList.remove('ativo');
+  });
+  liEducation.forEach((botao)=>{
+    botao.classList.remove('ativo');
+  })
+  divEducation[index].classList.add('ativo');
+  liEducation[index].classList.add('ativo');
+}
+
+
+liExperiencia.forEach((Event,index)=>{
+  Event.addEventListener('click', ()=>{
+    slideShow(index)
+  })
+})
+
+liEducation.forEach((Event,index)=>{
+  Event.addEventListener('click', ()=>{
+    slideShow2(index)
+  })
+})
+  
+}
+
+sobreMim();

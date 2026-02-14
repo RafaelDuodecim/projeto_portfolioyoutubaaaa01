@@ -440,7 +440,7 @@ main .sobre{
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Ícone */
+/* Ícone sobre mim */
 .my_services ul li i {
     font-size: 2.7rem;
     color: #dc3545;
@@ -489,7 +489,7 @@ main .sobre{
     border-left: 2px solid transparent;
 }
 
-/* Hover — cobre o card inteiro */
+/* Hover — cobre o card inteiro efeito*/
 .my_services ul li:hover::before,
 .my_services ul li:hover::after {
     width: 100%;
@@ -512,6 +512,7 @@ main .sobre{
     align-items: start;
 }
 
+/*cor dos cards my resume*/
 
 .resume_generico h2{
     font-family: 'poppins';
@@ -522,6 +523,7 @@ main .sobre{
     border-radius: 6px;
 }
 
+/*Espaço entre o icone e o texto*/
 .resume_generico h2 i {
     margin-right: 10px;
 }
@@ -537,7 +539,7 @@ main .sobre{
     grid-column: 2;
     grid-row: 1;
 }
-
+/*Cor das bolinhas experience*/
 .experience_content ul{
     color: #ff5d56;
     gap: 10px;
@@ -547,10 +549,20 @@ main .sobre{
     justify-content: center;
 }
 
+.experience_content ul{
+    list-style: none;   /* remove marcador padrão */
+    padding: 0;         /* remove recuo lateral */
+}
 .resume_generico .experience_content div{
     background-color: #222;
+    animation: ladoSecao .5s ease-in-out forwards;
+    display: none;
     padding: 20px;
     position: relative;
+}
+
+.resume_generico .experience_content div.ativo{
+    display: block;
 }
 
 .resume_generico .experience_content div::before{
@@ -563,10 +575,11 @@ main .sobre{
     display: inline-block;
 }
 
+/*data de contratação*/
 .resume_generico .experience_content div span {
     color: #dc3545;
     font-family: 'poppins';
-    font-weight: bold;
+    font-weight: bold; /*um marca mais forte, grossa*/
 }
 
 .resume_generico .experience_content div h3 {
@@ -576,14 +589,20 @@ main .sobre{
 
 .resume_generico .experience_content div p {
     color: #707070;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
-/* Diplomas e Cursos */
+.experience_content ul li.ativo {  /*adc na seleção uma cor*/
+    color: #3e3d3d;
+}
+
+/* Meus Diplomas e Cursos */
 
 .resume_generico .education_content div{
     background-color: #222;
-    padding: 40px;
+    padding: 20px;  /*espaçamento da caixa do texto*/
+    display: none;
+    animation: ladoSecao .5s ease-in-out forwards;
     position: relative;
 }
 
@@ -596,6 +615,10 @@ main .sobre{
     justify-content: center;
 }
 
+.education_content ul{
+    list-style: none;   /* remove marcador padrão */
+    padding: 0;         /* remove recuo lateral */
+} 
 .resume_generico .education_content div::before{
     content: '';
     border-right: 30px solid transparent; 
@@ -623,4 +646,10 @@ main .sobre{
     font-size: 1.1rem;
 }
 
+.education_content ul li.ativo {  /*adc na seleção uma cor*/
+    color: #3e3d3d;
+}
 
+.resume_generico .education_content div.ativo{
+    display: block;
+}
